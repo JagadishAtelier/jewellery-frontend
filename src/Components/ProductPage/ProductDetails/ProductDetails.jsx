@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ProductDetails.css';
 import detailsImage from '../../../assets/Orders.svg';
-import priceBreakImage from '../../../assets/price-breakup.svg';
+import priceBreakImage from '../../../assets/Price-breakup.svg';
 import reviewImage from '../../../assets/Reviews.svg';
 import generalImage from '../../../assets/general-mob.svg'
 import goldImage from '../../../assets/Gold.svg'
