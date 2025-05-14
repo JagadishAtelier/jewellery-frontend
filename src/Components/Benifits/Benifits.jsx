@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Benifits.css';
-import img from "../../assets/ringspng.png";
+import img from "../../assets/Ringspng.png";
 
 function Benifits() {
   const ref = useRef([]);
