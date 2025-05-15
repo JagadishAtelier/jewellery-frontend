@@ -19,9 +19,9 @@
     width: 100%;
     text-align: center;
     font-weight: 500;
-    color: #f1f1f1;
+    color: white;
     font-family: "Montserrat", sans-serif !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to top, rgba(188, 2, 2, 0.6), transparent);
 }
 .product-name p {
   padding: 0px 10px;
@@ -30,7 +30,7 @@
   text-overflow: ellipsis;
 }
 .product-name h3{
-  color: #fff;
+  color: white;
 }
 
 /* === Entrance Animation === */
@@ -97,7 +97,7 @@
 
 .index-0 { transform: scale(0.9) rotateZ(-4deg) translateY(40px); }
 .index-1 { transform: scale(0.9) rotateZ(-3deg) translateY(20px); }
-.index-2 { transform: scale(1) rotateZ(1deg) translateY(0px); }
+.index-2 { transform: scale(1) rotateZ(0deg) translateY(-9px); }
 .index-3 { transform: scale(0.9) rotateZ(3deg) translateY(20px); }
 .index-4 { transform: scale(0.9) rotateZ(4deg) translateY(40px); }
 
@@ -106,24 +106,35 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 10px;
-  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #e5c98c;
   cursor: pointer;
-  z-index: 4;
-  width: 70px;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
+  z-index: 10;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.slider-btn :hover{
+  background-color: #f5e5c0;
 }
 
 .prev-btn {
   left: 10px;
+  color: #8b3a3a;
 }
-
+.prev-btn :hover{
+  color : #d4af37;
+}
 .next-btn {
   right: 10px;
+  color: #8b3a3a;
+}
+.next-btn :hover{
+  color : #d4af37;
 }
 
 @media (hover: hover) {

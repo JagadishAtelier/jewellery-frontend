@@ -11,6 +11,7 @@ import img from '../../assets/Ringspng.png'
 import BestSale from '../BestSale/BestSale'
 import Catagories from '../Catagories/Catagories'
 import ShopImage from '../Shop-Image/ShopImage'
+import ShopByGender from '../ShopByGender/ShopByGender'
 function HomePage() {
   const hotspots = [
     {
@@ -37,7 +38,7 @@ function HomePage() {
   return (
     <>
        {/* <Navbar/> */}
-    <div style={{margin:"0px 30px"}}>
+    <div>
       <Wallpaper/>
       <Catagories/>
       <BestSale/>
@@ -45,6 +46,7 @@ function HomePage() {
       <Benifits/>
       {/* <Poster/> */}
       <Lookbook hotspots={hotspots} />
+      <ShopByGender/>
       <ShopImage/>
       <Payments/>
     </div>

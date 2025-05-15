@@ -16,7 +16,7 @@
 }
 
 .progress-fill {
-  background: #d9534f;
+  background: #8b3a3a;
   height: 100%;
   width: 0%;
   animation: fillProgress 1.2s ease forwards;
@@ -50,10 +50,6 @@
 .customer-love-container {
   width: 500px;
   height: fit-content;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 5%;
 }
 
 .customer-love-header {

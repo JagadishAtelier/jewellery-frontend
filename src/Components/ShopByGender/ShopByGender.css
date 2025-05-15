@@ -1,0 +1,33 @@
+/* Main grid container */
+.shop-by-gender-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px;
+  }
+  
+  /* Each image + text block */
+  .shop-by-gender-item {
+    text-align: center;
+  }
+  
+  /* Image styles */
+  .shop-by-gender-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: fill;
+    border-radius: 8px;
+  }
+  
+  .shop-by-gender{
+    text-align: center;
+    margin-top: 5%;
+  }
+  /* Text below each image */
+  .shop-by-gender-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+  }
+  

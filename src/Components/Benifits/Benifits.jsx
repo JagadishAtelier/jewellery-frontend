@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './Benifits.css';
-import img from "../../assets/Ringspng.png";
-
+import environmentImage from '../../assets/environment.jpeg'
+import qualityImage from '../../assets/qualityImage.jpeg'
+import trustImage from '../../assets/trust.jpg'
 function Benifits() {
   const ref = useRef([]);
 
@@ -31,24 +32,29 @@ function Benifits() {
     </div>
     <div className='Benifits'>
       <div className='Benifits-experience'>
-        <img src={img} alt="Image" className='rotate' />
-        <h3 className='fade-slide-up' ref={el => ref.current.push(el)}>25 years of experience and trust</h3>
-        <p className='fade-slide-up' ref={el => ref.current.push(el)} style={{ transitionDelay: "0.2s" }}>
-          Jewelry enhances personal style, symbolizes special moments, and can hold emotional or cultural significance...
-        </p>
-      </div>
-
-      <div className='Benifites-left' style={{ width: "100%" }}>
-        <div className='Benifits-quality'>
-          <h3 className='fade-slide-up' ref={el => ref.current.push(el)}>Quality and materials</h3>
+      <img src={trustImage} alt="Image" className='rotate' />
+        <div className='text-befits'>
+          <h1 className='fade-slide-up' ref={el => ref.current.push(el)}>25 years of experience and trust</h1>
           <p className='fade-slide-up' ref={el => ref.current.push(el)} style={{ transitionDelay: "0.2s" }}>
-            Quality and materials refer to the craftsmanship and the type of metals, stones, or gems used in jewelry...
+          Jewelry enhances personal style, symbolizes special moments, and can hold emotional or cultural significance...
           </p>
         </div>
-        <div className='Benifits-environmental'>
-          <h3 className='fade-slide-up' ref={el => ref.current.push(el)}>Environmental responsibilities</h3>
+      </div>
+      <div className='Benifits-experience'>
+        <div className='text-befits'>
+          <h1 className='fade-slide-up' ref={el => ref.current.push(el)}>Quality and materials</h1>
           <p className='fade-slide-up' ref={el => ref.current.push(el)} style={{ transitionDelay: "0.2s" }}>
-            Environmental responsibilities involve using sustainable practices and ethically sourced materials...
+          Quality and materials refer to the craftsmanship and the type of metals, stones, or gems used in jewelry...
+          </p>
+        </div>
+        <img src={qualityImage} alt="Image" className='rotate' />
+      </div>
+      <div className='Benifits-experience'>
+      <img src={environmentImage} alt="Image" className='rotate' />
+        <div className='text-befits'>
+          <h1 className='fade-slide-up' ref={el => ref.current.push(el)}>Environmental responsibilities</h1>
+          <p className='fade-slide-up' ref={el => ref.current.push(el)} style={{ transitionDelay: "0.2s" }}>
+          Environmental responsibilities involve using sustainable practices and ethically sourced materials...
           </p>
         </div>
       </div>

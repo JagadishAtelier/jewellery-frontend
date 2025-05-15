@@ -1,11 +1,7 @@
 .waranty-page-container {
-  height: 100px;
   width: 500px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 5%;
-  border-radius: 20px;
+  height: 100px;
   text-align: center;
-  padding: 20px;
   overflow: hidden;
   position: relative;
   display: flex;

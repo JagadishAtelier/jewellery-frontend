@@ -15,6 +15,7 @@ function ProductDelevery() {
   };
 
   return (
+    
     <div className="delevery-card">
       <div className="delevery-header">
         <img src={delevery} alt="delivery" />
@@ -33,7 +34,7 @@ function ProductDelevery() {
           value={pincode}
           onChange={(e) => setPincode(e.target.value)}
         />
-        <button className="check-btn" onClick={handleCheck}>Check Availability</button>
+        <button className="check-ava-btn" onClick={handleCheck}>Check Availability</button>
       </div>
 
       {/* Show message conditionally */}

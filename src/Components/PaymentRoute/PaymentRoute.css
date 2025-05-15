@@ -79,11 +79,12 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effect */
   width: 300px;
-  background-color: palevioletred;
+  background-color: #8b3a3a;
+  color: white;
 }
 
 .payment-btn:hover {
-  background-color: #d24e6f; /* Darker shade on hover */
+  background-color: #8b3a3a; /* Darker shade on hover */
   transform: scale(1.05); /* Slight scale-up effect on hover */
 }
 

@@ -1,16 +1,24 @@
-.Benifits h3{
+.Benifits h1{
  text-transform: capitalize;
  margin-bottom: 16px;
- color: rgb(191 153 104);
+ color: #8b3a3a;
 }
 .Benifits{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 50px;
     margin: 5% 0px;
 }
+.text-befits{
+  width: 500px;
+}
 
-  
+  .rotate{
+    height: 500px;
+    width: 665px;
+    border-radius: 10px;
+  }
 .Benifites-left{
     width: 100%;
     height: inherit;
@@ -20,12 +28,12 @@
    
 }
 .Benifits-experience{
-    width: 100%;
-    height: inherit;
-    padding: 20px 20px 20px 20px;
-    background-color:rgb(243, 218, 209);
+  justify-content: space-around;
     border-radius: 20px;
-}
+    display: flex;
+    align-items: center;
+  
+  }
 .Benifits-experience:hover,
 .Benifits-quality:hover,
 .Benifits-environmental:hover {

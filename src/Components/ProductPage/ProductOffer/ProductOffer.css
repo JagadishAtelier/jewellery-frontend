@@ -37,10 +37,6 @@
 .product-offer-container {
   width: 500px;
   height: fit-content;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  margin-top: 5%;
-  padding: 20px;
   justify-content: space-between;
   animation: fadeInUp 0.6s ease-in-out;
 }

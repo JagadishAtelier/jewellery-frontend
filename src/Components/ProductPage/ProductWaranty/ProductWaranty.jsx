@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './ProductWaranty.css';
-import warantyImages from '../../../assets/TATA.svg';
 import warantyImages1 from '../../../assets/bis.svg';
 import warantyImages2 from '../../../assets/0ne-year-waranty.svg';
 
-const images = [warantyImages, warantyImages1, warantyImages2];
+const images = [warantyImages1, warantyImages2];
 
 function ProductWaranty() {
   const [currentIndex, setCurrentIndex] = useState(0);

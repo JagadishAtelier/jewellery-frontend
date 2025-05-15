@@ -36,11 +36,11 @@
 }
 .navbar-right-icons a{
  color: #333;
- margin-left: 10px;
+ margin-left: 5px;
  font-size: 25px;
 }
 .navbar-right-icons i{
-  font-size: 25px;
+  font-size: 19px !important;
 }
 .navbar-right-icons a:hover{
   color: #bf9968;
@@ -85,7 +85,6 @@
   align-items: center;
   padding: 10px 20px;
   background-color: #f1f1f1;
-  border-radius: 0px 0px 30px 30px;
 }
 
 .navbar-desktop .Navbar-icons-headings a {

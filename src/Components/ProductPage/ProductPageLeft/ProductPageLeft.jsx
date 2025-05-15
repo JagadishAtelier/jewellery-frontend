@@ -46,7 +46,7 @@ function ProductPageLeft() {
           </div>
         </div>
         <p>{product?.shortdiscription}</p>
-        <hr />
+
         <div className="goldDiamond">
             <div className="goldDiamond-track">
                 {visibleItems.map((content, index) => (
@@ -59,11 +59,17 @@ function ProductPageLeft() {
         </div>
 
       </div>
+      <hr/>
     <ProductSize/>
+    <hr/>
     <ProductDelevery/>
+    <hr/>
     <ProductWaranty/>
+    <hr/>
     <ProductOffer/>
+    <hr/>
     <CustomerLove/>
+    <hr/>
     <ProductDetails/>
     </div>
   );

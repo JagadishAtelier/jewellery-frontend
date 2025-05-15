@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'; // ✅ Needed to get `id` from URL
+import { useParams } from 'react-router-dom';
 import Slider from "react-slick";
 import useWindowWidth from './useWindowWidth';
 import { getProductbyid } from '../../../api/productApi';
@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function ProductPage() {
-  const { id } = useParams(); // ✅ extract product ID from URL
+  const { id } = useParams();
   const [productimages, setProductimages] = useState(null);
   const windowWidth = useWindowWidth();
   const isMobile = windowWidth <= 768;
@@ -27,7 +27,6 @@ function ProductPage() {
 
     if (id) fetchData();
   }, [id]);
-console.log(productimages);
 
   const settings = {
     dots: true,
@@ -40,56 +39,59 @@ console.log(productimages);
     arrows: false,
   };
 
-  if (!productimages) {
-    return <div>Loading...</div>; // You can replace this with a skeleton
+  if (!productimages || productimages.length === 0) {
+    return <div>Loading...</div>;
   }
+
+  // Always show the media at index 1 as the big image/video
+  const bigMediaIndex = 1;
+  const bigMedia = productimages[bigMediaIndex];
+
+  // Filter out the big media for the thumbnails
+  const otherMedia = productimages.filter((_, index) => index !== bigMediaIndex);
+
+  const renderMedia = (media, index, className) => {
+    const isVideo = media.endsWith('.mp4');
+    return isVideo ? (
+      <video controls className={className} key={index}>
+        <source src={media} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    ) : (
+      <img
+        key={index}
+        src={media}
+        alt={`Product ${index}`}
+        className={className}
+      />
+    );
+  };
 
   return (
     <div>
       {isMobile ? (
         <Slider {...settings} className="mobile-carousel">
-          {productimages.map((media, index) => {
-            const isVideo = media.endsWith('.mp4');
-            return (
-              <div key={index} className="carousel-item">
-                {isVideo ? (
-                  <video controls className="product-page-video">
-                    <source src={media} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <img
-                    src={media}
-                    key={index}
-                    alt={`Product ${index}`}
-                    className="product-page-image"
-                  />
-                )}
-              </div>
-            );
-          })}
+          {productimages.map((media, index) => (
+            <div key={index} className="carousel-item">
+              {renderMedia(media, index, 'product-page-image')}
+            </div>
+          ))}
         </Slider>
       ) : (
         <div className="product-media-container">
-          {productimages.map((media, index) => {
-            const isVideo = media.endsWith('.mp4');
-            return (
+          {/* Big image/video at index 1 */}
+          <div className="full-width-image">
+            {renderMedia(bigMedia, bigMediaIndex, 'full-width-image')}
+          </div>
+
+          {/* Thumbnails for other media */}
+          <div className="bottom-image-grid">
+            {otherMedia.map((media, index) => (
               <div key={index} className="product-media-item">
-                {isVideo ? (
-                  <video controls className="product-page-video">
-                    <source src={media} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <img
-                    src={media}
-                    alt={`Product ${index}`}
-                    className="product-page-image"
-                  />
-                )}
+                {renderMedia(media, index, 'product-page-image')}
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       )}
     </div>

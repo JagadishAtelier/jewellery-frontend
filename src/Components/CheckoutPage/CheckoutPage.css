@@ -163,12 +163,12 @@
   }
   
   .edit-btn {
-    background-color: #f8b5c2;
+    background-color: #8b3a3a;
     border: none;
     padding: 6px 14px;
     border-radius: 20px;
     font-weight: 500;
-    color: #800030;
+    color:white;
     cursor: pointer;
   }
   
@@ -192,7 +192,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 1001;
   }
   
   .modal-content,

@@ -88,12 +88,13 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.9rem 1.2rem;
-  border: 1px solid white;
+  border: 1px solid none;
   border-radius: 8px;
-  background-color: #eeeded;
+  background-color: #8b3a3a;
   cursor: pointer;
   font-weight: 500;
   z-index: 1;
+  color: white;
 }
 
 .login-phone-section img {
@@ -125,7 +126,7 @@
 
 /* Continue button */
 .continue-button {
-  background-color: palevioletred;
+  background-color: #8b3a3a;
   color: #fff;
   padding: 0.9rem 2rem;
   border: none;
@@ -138,7 +139,7 @@
 }
 
 .continue-button:hover {
-  background-color: #333;
+  background-color: #8b3a3a;
 }
 
 /* Step 2 user form */

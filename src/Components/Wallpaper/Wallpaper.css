@@ -2,7 +2,6 @@
     height: 95vh;
     width: 100%;
     object-fit: cover;
-    border-radius: 20px;
 }
 .play-pause-btn {
     border-radius: 50%;
@@ -24,9 +23,37 @@
     align-items: flex-end;
     width: 8%;
   }
-.carousel-caption h1{
-    color: aliceblue !important;
-}
+  .carousel-caption {
+    position: absolute;
+    top: 55%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .carousel-caption h1 {
+    font-size:6rem; /* Bigger font */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    color: white;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  }
+  
+  .wallpaper-video {
+    object-fit: cover;
+    height: 100vh;
+  }
+  
 .carousel-control-prev-icon {
   display: none;
 }

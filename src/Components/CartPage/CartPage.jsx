@@ -65,14 +65,14 @@ function CartPage() {
                         <option value="IN">IN</option>
                       </select>
                     </div>
-                    <input type="text" placeholder="Enter pincode" />
-                    <button className="check-btn">Check availability</button>
+                    <input type="text" placeholder="Pincode" style={{padding:"-2px !important"}} />
+                    <button className="check-button">Check availability</button>
                   </div>
                 )}
               </div>
 
               {!showPincodeInput && (
-                <a onClick={togglePincode}>pincode</a>
+                <a onClick={togglePincode} style={{cursor:"pointer",color:"#8b3a3a"}}>pincode</a>
               )}
             </div>
 

@@ -56,16 +56,21 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 300px;
+
 }
 
 .add-to-cart-container button:first-of-type {
-  background-color: #f0c14b;
-  color: #111;
+  background-color: #8b3a3a;
+  color: #fff;
+}
+.add-to-cart-container button:first-of-type :hover {
+  background-color: #a14d4d;
+  color: #fff;
 }
 
 .add-to-cart-container button:last-of-type {
-  background-color: #ff9900;
-  color: white;
+  background-color: #8b3a3a;
+  color: #fff;
 }
 
 @media (max-width: 768px) {

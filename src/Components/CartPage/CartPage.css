@@ -5,7 +5,6 @@
   border-radius: 20px;
   width: 100%;
   max-width: 600px;
-  box-shadow: 0 4px 8px rgb(192, 190, 190);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -72,8 +71,8 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 3px rgba(217, 75, 99, 0.2);
 }
 
-.check-btn {
-  background-color: #d94b63;
+.check-button {
+  background-color: #8b3a3a;
   color: white;
   border: none;
   border-radius: 20px;
@@ -85,9 +84,9 @@ input[type="text"]:focus {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.check-btn:hover {
+.check-button:hover {
   transform: scale(1.05);
-  background-color: #e23b56;
+  background-color: #8b3a3a;
 }
 
 .cart-item {

@@ -17,7 +17,7 @@
 }
 
 .goldDiamond {
-  height: 80px; /* Shows 2 items (2 x 40px) */
+  margin-top: 2%;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -50,15 +50,44 @@
 .product-price-list {
   height: fit-content;
   width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* horizontal, vertical, blur, color */
-  padding: 10px 30px;
-  border-radius: 20px;
 }
 
 .product-page-left {
   margin-top: 8%;
-  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid none;
+  height: fit-content;
+  width: 600px;
+  border-radius: 10px;
+
+  padding: 10px;
 }
+
+/* hr {
+  border: none;
+  height: 2px;
+  background: #818080; 
+  width: 0%;
+  margin: 20px auto;
+  transform-origin: center;
+  animation: hrGrow 2s ease-in-out infinite alternate;
+} */
+
+/* @keyframes hrGrow {
+  0% {
+    width: 0%;
+    opacity: 0.4;
+  }
+  50% {
+    width: 50%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.4;
+  }
+} */
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

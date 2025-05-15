@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import Atelierlogo from '../../assets/Atelier-logo-nav.png';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Divisions from '../Divisions/Divisions';
 import { useModal } from '../ModalContext/ModalContext';
@@ -31,9 +30,6 @@ function Navbar() {
   return (
     <div className="navbar-container">
       <div className="navbar-mobile">
-        <a className="navbar-logo-mobile" href="/">
-          <img src={Atelierlogo} alt="Atelier" height="50px" />
-        </a>
         <button className="hamburger-menu">
           <i className="bi bi-list fs-3"></i>
         </button>
@@ -41,7 +37,6 @@ function Navbar() {
 
       <div className="navbar-desktop">
         <div className="navbar-logo-desktop">
-          <img src={Atelierlogo} alt="Atelier" height="60px" />
           <p>Jewellery</p>
         </div>
 
@@ -66,7 +61,7 @@ function Navbar() {
               <div className="profile-menu">
                 {user ? (
                   <>
-                    <div className="profile-name">👤 {user.name}</div>
+                    <div className="profile-name"> {user.name}</div>
                     <a onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
                   </>
                 ) : (

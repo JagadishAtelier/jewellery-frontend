@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Wallpaper.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Atelierlogo from '../../assets/Atelier-logo-nav.png';
 import video1 from '../../assets/9328448-uhd_4096_2160_25fps.webm';
 import video2 from '../../assets/12113525_1920_1080_50fps.webm';
 import video3 from '../../assets/9328448-uhd_4096_2160_25fps.webm';
@@ -51,7 +50,7 @@ function Wallpaper() {
   ];
 
   return (
-    <div id="wallpaperCarousel" className="carousel slide carousel-fade mt-3" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="wallpaperCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
       <div className="carousel-inner">
         {videos.map((vid, i) => (
           <div key={i} className={`carousel-item position-relative ${i === 0 ? 'active' : ''}`}>
@@ -63,14 +62,12 @@ function Wallpaper() {
             <div className="carousel-caption d-none d-md-block d-sm-block">
               <h1
                 className='text-capitalize mb-2 fade-slide-up'
-                style={{ letterSpacing: "2px" ,fontSize:"x-large" }}
                 ref={el => ref.current.push(el)}
               >
                 {captions[i].title}
               </h1>
               <p
                 className='mt-3 fade-slide-up'
-                style={{fontSize:"smaller"}}
                 ref={el => ref.current.push(el)}
               >
                 {captions[i].desc}
