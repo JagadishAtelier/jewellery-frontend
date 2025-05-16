@@ -1,6 +1,6 @@
 .pink-color-div {
   margin-top: 6%;
-  background-color: rgb(243, 58, 89);
+  background-color: #8b3a3a;;
   padding: 5px 20px;
   text-align: center;
   color: white;
@@ -10,7 +10,6 @@
 .animated-text {
   font-size: 1.8rem;
   font-weight: 600;
-  font-family: 'Playfair Display', serif;
   animation: fadeInOut 4s ease-in-out infinite, bounce 2s ease infinite; /* Added bounce animation */
   letter-spacing: 0.8px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -119,7 +118,7 @@
 }
 
 .filter-btn.active {
-  background-color: #f06eaa;
+  background-color: #8b3a3a;;
   color: white;
 }
 
@@ -291,7 +290,7 @@
 
 /* Modal Filter Button */
 .modal-filter-btn {
-  background-color: #f0a5c6;
+  background-color: #8b3a3a;
   border: none;
   padding: 10px 15px;
   color: #fff;

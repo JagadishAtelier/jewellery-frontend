@@ -52,14 +52,14 @@
     border-radius: 20px;
     padding: 10px;
     border: none;
-    background-color: #f8b5c2;
+    background-color: #8b3a3a;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
 .payment-page-card button:hover {
-    background-color: #cc1e4a;
+    background-color: #8b3a3a;
     transform: scale(1.05);
 }
 

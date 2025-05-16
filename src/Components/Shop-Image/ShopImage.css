@@ -1,5 +1,5 @@
 .Shop-img-div {
-    position: relative; /* Enable absolute positioning inside */
+    position: relative;
     margin-top: 5%;
 }
 
@@ -15,11 +15,12 @@
     position: absolute;
     top: 50%;
     left: 75%;
-    transform: translate(-50%, -50%); /* Center the text block */
+    transform: translate(-50%, -50%);
     color: white;
     text-align: start;
     z-index: 1;
     padding: 1rem;
+    max-width: 50%;
 }
 
 .Shop-Img-words h1 {
@@ -44,4 +45,75 @@
 
 .Shop-Img-words button:hover {
     background-color: rgb(238, 68, 68);
+}
+
+/* ============================= */
+/* RESPONSIVE MEDIA QUERIES */
+/* ============================= */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .Shop-Img {
+        height: 300px;
+    }
+
+    .Shop-Img-words {
+        left: 65%;
+        max-width: 60%;
+    }
+
+    .Shop-Img-words h1 {
+        font-size: 3rem;
+    }
+
+    .Shop-Img-words p {
+        font-size: 15px;
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .Shop-Img {
+        height: 250px;
+    }
+
+    .Shop-Img-words {
+        left: 50%;
+        top: 60%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+    }
+
+    .Shop-Img-words h1 {
+        font-size: 2rem;
+    }
+
+    .Shop-Img-words p {
+        font-size: 14px;
+    }
+
+    .Shop-Img-words button {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Small phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .Shop-Img {
+        height: 200px;
+    }
+
+    .Shop-Img-words h1 {
+        font-size: 1.5rem;
+    }
+
+    .Shop-Img-words p {
+        font-size: 15px;
+    }
+
+    .Shop-Img-words {
+        top: 55%;
+        width: 100%;
+    }
 }

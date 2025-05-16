@@ -36,13 +36,16 @@
   }
   
   .carousel-caption h1 {
-    font-size:6rem; /* Bigger font */
-    font-weight: bold;
+    font-size:5rem; /* Bigger font */
+
     letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    color: white;
+
+    color: rgb(235, 233, 233) !important;
+    font-family: "Playfair Display", serif !important;
   }
-  
+  .italic{
+    font-style: italic !important;
+  }
   .carousel-caption p {
     font-size: 1.5rem;
     font-weight: 300;
@@ -65,10 +68,22 @@
   
 @media (max-width: 780px) {
     .carousel-inner video{
-      height: 30vh;
+      height: 50vh;
+    }
+    .carousel-caption{
+      position: absolute;
+      top: 55%;
+      left: 53%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 10;
+      width: 100%;
+      padding: 0 20px;
     }
     .carousel-caption h1{
       margin: unset !important;
+      z-index: 1001;
     }
     .carousel-caption P{
       margin: 0.5rem !important;

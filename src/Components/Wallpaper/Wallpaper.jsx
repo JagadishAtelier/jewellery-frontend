@@ -8,7 +8,9 @@ import video3 from '../../assets/9328448-uhd_4096_2160_25fps.webm';
 function Wallpaper() {
   const videoRefs = [useRef(null), useRef(null), useRef(null)];
   const [paused, setPaused] = useState([false, false, false]);
-  const ref = useRef([]);
+  
+  const titleRefs = useRef([]);
+  const descRefs = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,7 +24,11 @@ function Wallpaper() {
       { threshold: 0.1 }
     );
 
-    ref.current.forEach(el => {
+    titleRefs.current.forEach(el => {
+      if (el) observer.observe(el);
+    });
+
+    descRefs.current.forEach(el => {
       if (el) observer.observe(el);
     });
 
@@ -36,10 +42,7 @@ function Wallpaper() {
     } else {
       video.pause();
     }
-    setPaused(prev => {
-      const newState = prev.map((p, i) => (i === index ? !p : p));
-      return newState;
-    });
+    setPaused(prev => prev.map((val, i) => i === index ? !val : val));
   };
 
   const videos = [video1, video2, video3];
@@ -49,48 +52,67 @@ function Wallpaper() {
     { title: "Elegance in Every Frame", desc: "Highlighting the beauty of your special day" },
   ];
 
+  function splitTitle(title) {
+    const words = title.trim().split(" ");
+    const len = words.length;
+    if (len < 3) return { first: title, middle: "", last: "" };
+
+    const midStart = Math.floor(len / 3);
+    const midEnd = midStart * 2;
+
+    const first = words.slice(0, midStart).join(" ");
+    const middle = words.slice(midStart, midEnd).join(" ");
+    const last = words.slice(midEnd).join(" ");
+
+    return { first, middle, last };
+  }
+
   return (
     <div id="wallpaperCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
       <div className="carousel-inner">
-        {videos.map((vid, i) => (
-          <div key={i} className={`carousel-item position-relative ${i === 0 ? 'active' : ''}`}>
-            <video ref={videoRefs[i]} className="d-block w-100 wallpaper-video" autoPlay loop muted>
-              <source src={vid} type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
+        {videos.map((vid, i) => {
+          const { first, middle, last } = splitTitle(captions[i].title);
+          return (
+            <div key={i} className={`carousel-item position-relative ${i === 0 ? 'active' : ''}`}>
+              <video
+                ref={videoRefs[i]}
+                className="d-block w-100 wallpaper-video"
+                autoPlay
+                loop
+                muted
+              >
+                <source src={vid} type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
 
-            <div className="carousel-caption d-none d-md-block d-sm-block">
-              <h1
-                className='text-capitalize mb-2 fade-slide-up'
-                ref={el => ref.current.push(el)}
+              <div className="carousel-caption d-none d-md-block d-sm-block">
+                <h1
+                  className="text-capitalize mb-2 fade-slide-up"
+                  ref={el => (titleRefs.current[i] = el)}
+                >
+                  {first && <>{first} </>}
+                  {middle && <span className="italic">{middle}</span>}
+                  {last && <> {last}</>}
+                </h1>
+                <p
+                  className="mt-3 fade-slide-up"
+                  ref={el => (descRefs.current[i] = el)}
+                >
+                  {captions[i].desc}
+                </p>
+              </div>
+
+              <button
+                onClick={() => togglePlayback(i)}
+                className="text-light border-0 bg-transparent position-absolute play-pause-btn"
+                style={{ bottom: '20px', right: '30px', zIndex: 99 }}
               >
-                {captions[i].title}
-              </h1>
-              <p
-                className='mt-3 fade-slide-up'
-                ref={el => ref.current.push(el)}
-              >
-                {captions[i].desc}
-              </p>
+                <i className={`bi ${paused[i] ? 'bi-play-fill' : 'bi-pause-fill'} fs-3`}></i>
+              </button>
             </div>
-            <button
-              onClick={() => togglePlayback(i)}
-              className="text-light border-none position-absolute play-pause-btn"
-              style={{ bottom: '20px', right: '30px', zIndex: 99 }}
-            >
-              <i className={`bi ${paused[i] ? 'bi-play-fill' : 'bi-pause-fill'}`}></i>
-            </button>
-          </div>
-        ))}
+          );
+        })}
       </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#wallpaperCarousel" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#wallpaperCarousel" data-bs-slide="next">
-        <span className="carousel-control-next-icon opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
     </div>
   );
 }

@@ -156,4 +156,23 @@
       height: 250px;
     object-fit: cover;
     }
-  }
+    .content-lookbook.active{
+      right: -28px !important;
+        top: 20px !important;
+        width: 200px;
+        height: 83px;
+        padding: 0px !important;
+    }
+    }
+    .item-lookbook{
+      left: 86.65%;
+      top: 62.01%;
+      cursor: pointer;
+    }
+    .item-thumb img{
+      height: 100px;
+      object-fit: cover;
+    }
+    .item-thumb{
+      align-items: normal;
+    }

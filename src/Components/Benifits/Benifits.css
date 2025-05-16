@@ -1,93 +1,88 @@
-.Benifits h1{
- text-transform: capitalize;
- margin-bottom: 16px;
- color: #8b3a3a;
+.Benifits h1 {
+  text-transform: capitalize;
+  margin-bottom: 16px;
+  color: #8b3a3a;
 }
-.Benifits{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 50px;
-    margin: 5% 0px;
+
+.Benifits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 5% 0;
 }
-.text-befits{
+
+.text-befits {
   width: 500px;
 }
 
-  .rotate{
-    height: 500px;
-    width: 665px;
-    border-radius: 10px;
-  }
-.Benifites-left{
-    width: 100%;
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-   
+.rotate {
+  width: 665px;
+  height: 500px;
+  border-radius: 10px;
 }
-.Benifits-experience{
+
+.Benifites-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Benifits-experience {
+  display: flex;
+  align-items: center;
   justify-content: space-around;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-  
-  }
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.Benifits-quality,
+.Benifits-environmental {
+  width: 100%;
+  padding: 5%;
+  background-color: rgb(246, 245, 250);
+  border-radius: 20px;
+}
+.text-befits p{
+  font-size: 18px;
+}
+.Benifits-quality {
+  margin-bottom: 40px;
+}
+
 .Benifits-experience:hover,
 .Benifits-quality:hover,
 .Benifits-environmental:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
-
-.Benifits-quality{
-    width: 100%;
-    height: inherit;
-    padding: 5%;
-    background-color: rgb(246, 245, 250);
-    margin-bottom: 40px;
-    border-radius: 20px;
-}
-.Benifits-environmental{
-    width: 100%;
-    border-radius: 20px;
-    padding: 5%;
-    background-color: rgb(246, 245, 250);
-}
-
+/* Responsive Design */
 @media (max-width: 780px) {
-    .Benifits,.Benifites-left{
-        gap:15px;
-    }
-    .Benifits-quality,
-    .Benifits-environmental{
-        margin: unset;
-        height: 100%;
-    }
-
-
-}
-
-@media (max-width: 780px) {
-    .Benifits {
-      flex-direction: column; /* Stack items vertically */
-      gap: 20px;
-    }
-  
-    .Benifites-left {
-      flex-direction: column;
-    }
-  
-    .Benifits-quality,
-    .Benifits-environmental,
-    .Benifits-experience {
-      width: 100%;
-      height: auto;
-      margin: 0;
-    }
+  .Benifits {
+    gap: 20px;
   }
-  
+
+  .Benifites-left {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .text-befits{
+    width:100%
+  }
+
+  .rotate {
+    width: 100%;
+    height: auto;
+  }
+
+  .Benifits-quality,
+  .Benifits-environmental,
+  .Benifits-experience {
+    margin: 10px;
+    height: auto;
+    flex-direction: column;
+  }
+}

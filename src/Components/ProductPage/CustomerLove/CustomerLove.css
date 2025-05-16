@@ -64,7 +64,7 @@
 }
 
 .customer-love-a-tag a {
-  color: #d9534f;
+  color: #8b3a3a;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -75,26 +75,22 @@
   font-weight: 400;
 }
 
-/* Animation for progress bar */
+/* Animation */
 @keyframes fillProgress {
   0% {
     width: 0%;
   }
   100% {
-    width: 85%; /* Change to desired fill percentage */
+    width: 85%; /* Customize per instance */
   }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .progress-bar-container {
-    width: 90%;
-    margin-top: 5%;
-    padding: 15px;
-  }
-
+  .progress-bar-container,
   .customer-love-container {
     width: 90%;
+    padding: 15px;
     margin-top: 5%;
   }
 
@@ -115,18 +111,23 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  .love-title {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .customer-love-a-tag a {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 480px) {
-  .progress-bar-container {
-    width: 100%;
+  .progress-bar-container,
+  .customer-love-container {
+    width: 73%;
     padding: 10px;
     text-align: center;
-  }
-
-  .customer-love-container {
-    width: 100%;
-    padding: 10px;
   }
 
   .progress-bar {
@@ -138,21 +139,34 @@
   }
 
   .bar-and-content {
-    flex-direction: column;
     gap: 6px;
+        width: 117%;
+        display: flex
+;
+        flex-direction: row;
   }
 
   .customer-love-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .customer-love-a-tag a {
-    font-size: 14px;
+    gap: 8px;
+        width: 75%;
+        display: flex
+;
+        flex-direction: row;
+        align-items: end;
   }
 
   .love-title {
-    font-size: 14px;
-    margin-left: 10px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .customer-love-a-tag a {
+    font-size: 13px;
+   
+  }
+  .customer-love-a-tag{
+    text-align: left;
+    margin-top: 5%;
   }
 }

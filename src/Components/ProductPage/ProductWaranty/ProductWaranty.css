@@ -52,8 +52,8 @@
 
 @media (max-width: 480px) {
   .waranty-page-container {
-    width: 100%;
-    padding: 10px;
+    width: 50% !important;
+    height: 60px !important;
   }
 
   .image-wrapper img {

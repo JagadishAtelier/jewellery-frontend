@@ -149,6 +149,17 @@
 
   .offer-heading-image {
     gap: 5px;
+        display: flex
+;
+        flex-direction: row;
+        align-items: end;
+  }
+  .product-offer-heading{
+    display: flex
+    ;
+        justify-content: left;
+        gap: 15%;
+        align-items: center;
   }
 
   .offer-percent {

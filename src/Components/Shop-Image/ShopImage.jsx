@@ -1,6 +1,6 @@
 import React from 'react'
 import './ShopImage.css'
-import ShopImg from '../../assets/Store_Locator-01.webp'
+import ShopImg from '../../assets/ShopImage.avif'
 function ShopImage() {
   return (
     <>

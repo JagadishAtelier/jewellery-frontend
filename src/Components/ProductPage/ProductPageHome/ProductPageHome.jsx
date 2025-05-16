@@ -5,6 +5,7 @@ import ProductPage from '../ProductPageRight/ProductPage'
 import ProductPageLeft from '../ProductPageLeft/ProductPageLeft'
 import AddToCartNav from '../AddToCartNav/AddToCartNav'
 function ProductPageHome() {
+  
   return (
     <div>
       <Navbar/>

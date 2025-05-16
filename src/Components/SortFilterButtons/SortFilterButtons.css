@@ -27,12 +27,12 @@
   }
   
   .sort-filter-btn {
-    background: #f9f9f9;
+    background: #8b3a3a;
     border: none;
     border-radius: 30px;
     padding: 8px 20px;
     font-size: 15px;
-    color: #333;
+    color: white;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -45,7 +45,7 @@
   }
   
   .sort-filter-btn:hover {
-    background-color: #efefef;
+    background-color: #8b3a3a;
     box-shadow: 0 0 0 2px #ddd;
   }
   
