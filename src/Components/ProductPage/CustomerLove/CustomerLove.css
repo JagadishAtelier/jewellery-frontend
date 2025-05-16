@@ -123,11 +123,17 @@
 }
 
 @media (max-width: 480px) {
-  .progress-bar-container,
   .customer-love-container {
     width: 73%;
     padding: 10px;
     text-align: center;
+    margin-left: 35px;
+  }
+  .progress-bar-container{
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+
   }
 
   .progress-bar {

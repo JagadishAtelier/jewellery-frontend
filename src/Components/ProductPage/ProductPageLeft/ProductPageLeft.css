@@ -128,13 +128,14 @@
 
 @media (max-width: 480px) {
   .product-page-price {
-    width: 100%;
+    width: 50%;
     padding: 8px;
   }
 
   .product-price-list {
     width: 100%;
     padding: 8px 15px;
+    margin-left: 40px;
   }
 
   .product-page-left {

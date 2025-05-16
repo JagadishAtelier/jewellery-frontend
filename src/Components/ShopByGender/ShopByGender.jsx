@@ -8,7 +8,9 @@ const images = [{image:womenImage,text:"Women Jewellery"},
 function ShopByGender() {
     return (
     <div className='shop-by-gender'>
-        <h1>Shop by Gender</h1>
+      <h1>Curated For You</h1>
+      <br/>
+        <h4>Shop by Gender</h4>
       <div className="shop-by-gender-container">
         {images.map((items, index) => (
           <div key={index} className="shop-by-gender-item">

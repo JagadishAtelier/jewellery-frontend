@@ -7,11 +7,14 @@
 }
 .payment-deliver{
     display: flex;
-    justify-content: space-between;
-    column-gap: 3%;
+    justify-content: space-evenly;
     width: 100%;
     /* flex-wrap: wrap; */
     margin-top: 5%;
+}
+.payement-image{
+    height: 400px;
+    width: 100%;
 }
 
 .payment-section{
@@ -20,21 +23,20 @@
     border-radius: 20px;
     height: auto;
     padding: 20px;
-    width: 25%;
-    background-color: #f6f5fa;
+    width: 50%;
     flex-direction: column;
     justify-content: space-between;
+    margin: 20px;
 }
 .deliver-section{
     border: 1px solid none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     border-radius: 20px;
     height:auto;
     padding: 20px;
-    width:  25%;
-    background-color: #f6f5fa;
+    width:  50%;
+    margin: 20px;
 }
 .packing-section{
     width: 50%;
@@ -110,3 +112,79 @@
     animation-delay: 0.6s;
 }
 
+/* Existing CSS remains untouched */
+
+/* --- Responsive Enhancements --- */
+@media (max-width: 1024px) {
+    .payment-section,
+    .deliver-section,
+    .packing-section {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 780px) {
+    .payment-deliver {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .deliver-section,
+    .payment-section,
+    .packing-section {
+        width: 90%;
+        height: auto;
+    }
+
+    .payment-image1 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .payment-image1 img {
+        height: 30px;
+    }
+
+    .toptext p,
+    .paytext p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .toptext h1,
+    .paytext h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .packing-section img {
+        max-height: 250px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .toptext h1,
+    .paytext h1 {
+        font-size: 22px;
+    }
+
+    .toptext p,
+    .paytext p {
+        font-size: 13px;
+    }
+
+    .payment-image1 {
+        gap: 10px;
+    }
+
+    .payment-image1 img {
+        height: 25px;
+    }
+
+    .packing-section img {
+        max-height: 200px;
+    }
+}

@@ -1,9 +1,8 @@
 import React from "react";
 import "./Payments.css";
-import upi from "../../assets/upi.png";
-import paytm from "../../assets/paytm.png";
-import phonepe from "../../assets/phonepe.png";
-import packing from "../../assets/packing.jpg";
+import packing from "../../assets/Home-Page-final-2.webp";
+import PaymentImage from '../../assets/Payment-Method-PNG-pic.png'
+import deleveryImage from '../../assets/Blog_CheapCourierService.png'
 function Payments() {
   return (
     <> 
@@ -11,36 +10,32 @@ function Payments() {
         <h1 className='my-3 ' >Hassle-Free Checkout</h1>
         <p className=' my-3 ' style={{ transitionDelay: "0.2s" }}>Take look at our Payment,Delvery,Packing</p>
       </div> */}
+      <div>
     <div className="payment-deliver">
       <div className="payment-section">
         <div className="paytext">
           <h1>Payments</h1>
-          <p>
-            Payments cards accepted.VISA,Master Card,Cashless Payments are
-            posible
-          </p>
+          <p>We offer a range of convenient and secure payment options to enhance your shopping experience:</p>
+<p><strong>Accepted Cards:</strong> VISA, MasterCard</p>
+<p><strong>Cashless Payments:</strong> Fully supported</p>
+<p><strong>Fast & Secure Checkout:</strong> Seamless digital transactions for hassle-free purchases</p>
+
         </div>
-        <div className="payment-image1">
-          <img src={upi} />
-          <img src={paytm} />
-          <img src={phonepe} />
-        </div>
+          <img src={PaymentImage} className="payement-image"/>
       </div>
 
       <div className="deliver-section">
         <div className="toptext">
           <h1>Delivery</h1>
-          <p>
-            Various delivery options are available free pick-up,we carefully
-            check and pack each product before shopping
-          </p>
-        </div>
-        <p className="del-btm-text">We send wholesale product only via transport companines</p>
-      </div>
+          <p>We offer various delivery options to suit your needs, including free in-store pickup.</p>
+<p>Each product is carefully checked and securely packed before shipping to ensure quality and safety.</p>
+<p>Various delivery options are available, including free pick-up. We carefully check and pack each product before shipping.</p>
 
-      <div className="packing-section">
-        <img src={packing} style={{ height: "300px" }} />
+        </div>
+        <img src={deleveryImage} className="payement-image"/>
       </div>
+      </div>
+        <img src={packing} />
     </div>
     </>
   );

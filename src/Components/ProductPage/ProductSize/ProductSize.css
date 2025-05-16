@@ -178,8 +178,9 @@
 
 @media (max-width: 480px) {
   .option-card {
-    width: 95%;
+    width: 100%;
     padding: 10px;
+    margin-left: 35px;
   }
 
   .modal-content {

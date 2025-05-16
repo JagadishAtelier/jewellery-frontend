@@ -140,10 +140,11 @@
   .product-offer-container {
     width: 100%;
     padding: 10px;
+    margin-left: 35px;
   }
 
   .pink-div {
-    width: 100%;
+    width: 50%;
     padding: 10px;
   }
 

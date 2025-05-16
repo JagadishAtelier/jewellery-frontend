@@ -17,6 +17,11 @@
     height: 500px;
     object-fit: fill;
     border-radius: 8px;
+    transition: transform 0.4s ease;
+  }
+  
+  .shop-by-gender-item img:hover {
+    transform: scale(1.05);
   }
   
   .shop-by-gender{
@@ -31,11 +36,15 @@
     color: #222;
   }
   @media (max-width: 480px) {
-    .shop-by-gender img{
+    .shop-by-gender img {
       width: 100%;
       height: 300px;
       object-fit: fill;
       border-radius: 8px;
-}
+      transition: transform 0.4s ease;
+    }
+    .shop-by-gender-item img:hover {
+      transform: scale(1.05);
+    }
 }
   

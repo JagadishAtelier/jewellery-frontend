@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './Benifits.css';
-import environmentImage from '../../assets/Environmental.avif'
-import qualityImage from '../../assets/QualityImage.avif'
-import trustImage from '../../assets/trust.jpg'
+import environmentImage from '../../assets/env.avif'
+import qualityImage from '../../assets/qual.avif'
+import trustImage from '../../assets/trusted.avif'
 function Benifits() {
   const ref = useRef([]);
 
