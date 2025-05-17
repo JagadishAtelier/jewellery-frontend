@@ -12,7 +12,7 @@
 
 .Shop-Img-words {
     position: absolute;
-    top: 75%;
+    top: 74%;
     left: 100%;
     transform: translate(-50%, -50%);
     color: white;
@@ -20,6 +20,7 @@
     z-index: 10;
     padding: 1rem;
     width: 60%;
+    background: linear-gradient(to top, rgba(27, 8, 8, 0.6), transparent);
 }
 
 .Shop-Img-words h1 {
@@ -45,7 +46,7 @@
 }
 
 .Shop-Img-words button:hover {
-    background-color: rgb(238, 68, 68);
+    background-color: #8b3a3a;
 }
 
 /* ============================= */

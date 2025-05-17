@@ -69,7 +69,7 @@ function Navbar() {
 
         <Divisions />
 
-        <div className="navbar-right-icons d-flex align-items-center">
+        <div className="navbar-right-icons d-flex align-items-baseline !mportant">
           <div className="search-icon-wrapper">
             <i className="bi bi-search fs-4" onClick={toggleSearchInput} style={{ cursor: 'pointer' }}></i>
             {isSearchVisible && (
