@@ -1,7 +1,7 @@
 import React from "react";
 import "./Payments.css";
 import packing from "../../assets/Home-Page-final-2.webp";
-import PaymentImage from '../../assets/Payment-Method-PNG-pic.png'
+import PaymentImage from '../../assets/Payment-Method-PNG-Pic.png'
 import deleveryImage from '../../assets/Blog_CheapCourierService.png'
 function Payments() {
   return (
