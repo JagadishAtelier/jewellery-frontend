@@ -8,13 +8,31 @@
     flex-wrap: wrap;
     gap: 20px;
 }
-
-.Assurance-data-div img {
+.assurance-0 img{
     margin-bottom: 25px;
-    margin-left: 15px;
+    margin-left: 23px;
     max-width: 100%;
     height: auto;
 }
+.assurance-1 img{
+    margin-bottom: 25px;
+    margin-left: 25px;
+    max-width: 100%;
+    height: auto;
+}
+.assurance-2 img{
+    margin-bottom: 25px;
+    margin-left: 7px;
+    max-width: 100%;
+    height: auto;
+}
+.assurance-3 img{
+    margin-bottom: 25px;
+    margin-left: 45px;
+    max-width: 100%;
+    height: auto;
+}
+
 
 .Assurance-container {
     text-align: center;
@@ -41,6 +59,7 @@
         margin: 3%;
         padding: 4%;
     }
+    
 }
 
 @media (max-width: 480px) {
@@ -50,6 +69,18 @@
 
     .Assurance-data-div {
         gap: 15px;
+    }
+    .assurance-3 img{
+        margin-left: 21px;
+    }
+    .assurance-2 img{
+        margin-left: 9px;
+    }
+    .assurance-1 img{
+        margin-left: 15px;
+    }
+    .assurance-0 img{
+        margin-left: 13px;
     }
 }
 /* Animation Keyframes */

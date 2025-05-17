@@ -18,7 +18,7 @@ function Assurance() {
       <h4>Crafted by experts, cherished by you.</h4>
       <div className='Assurance-data-div'>
         {data.map((items,index)=>(
-          <div key={index} className='Assurance-image-text'>
+          <div key={index} className={`Assurance-image-text assurance-${index}`}>
           <img src={items.image}/>
           <h5>{items.text}</h5>
           </div>
