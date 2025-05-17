@@ -93,6 +93,14 @@ const BestSale = () => {
 
     fetchData();
   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextProduct();
+    }, 4000); // scrolls every 4 seconds
+  
+    return () => clearInterval(interval); // cleanup
+  }, [products]);
+  
 
   const nextProduct = () => {
     setAnimate(true);

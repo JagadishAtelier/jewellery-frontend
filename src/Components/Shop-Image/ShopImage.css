@@ -26,10 +26,11 @@
     font-size: 4rem;
     margin: 0.5rem 0;
     font-weight: 1000;
+    color: white !important;
 }
 
 .Shop-Img-words p {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .Shop-Img-words button {

@@ -14,7 +14,6 @@ function CartPage() {
   const [showPincodeInput, setShowPincodeInput] = useState(false);
   const [isGift, setIsGift] = useState(false);
   const togglePincode = () => setShowPincodeInput((prev) => !prev);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
   const { cartItems } = useCart(); // ✅ getting cart items from context
   const { state: product } = useLocation();
@@ -65,7 +64,7 @@ function CartPage() {
                         <option value="IN">IN</option>
                       </select>
                     </div>
-                    <input type="text" placeholder="Pincode" style={{padding:"-2px !important"}} />
+                    <input type="text" placeholder="Pincode" style={{padding:"-2px !important" ,border:"black !important"}} />
                     <button className="check-button">Check availability</button>
                   </div>
                 )}
@@ -139,12 +138,6 @@ function CartPage() {
             <div className="grand-total-row">
               <span>Grand Total</span>
               <span>₹ {product.price.toLocaleString('en-IN')}</span>
-            </div>
-
-            <div className="waranty-page-container">
-              <div className={`image-wrapper ${animate ? 'slide-up' : ''}`}>
-                <img src={images[currentIndex]} alt="warranty" />
-              </div>
             </div>
           </div>
         </div>

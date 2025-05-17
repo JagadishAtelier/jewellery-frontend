@@ -1,0 +1,71 @@
+.Assurance-data-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    align-items: baseline;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.Assurance-data-div img {
+    margin-bottom: 25px;
+    margin-left: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+.Assurance-container {
+    text-align: center;
+    border: 1px solid rgb(228, 226, 226);
+    margin: 5%;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .Assurance-data-div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .Assurance-data-div img {
+        margin-left: 15px;
+    }
+
+    .Assurance-container {
+        margin: 3%;
+        padding: 4%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Assurance-container {
+        padding: 3%;
+    }
+
+    .Assurance-data-div {
+        gap: 15px;
+    }
+}
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation to Images */
+.Assurance-data-div img {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0; /* Ensures animation starts from 0 opacity */
+}

@@ -4,7 +4,6 @@ import Navbar from '../Navbar/Navbar'
 import Divisions from '../Divisions/Divisions'
 import Wallpaper from '../Wallpaper/Wallpaper'
 // import BestSalers from '../BestSalers/BestSalers'
-import Payments from '../Payments/Payments'
 import Lookbook from '../Lookbook/Lookbook'
 import Benifits from '../Benifits/Benifits'
 import img from '../../assets/Ringspng.png'
@@ -12,6 +11,7 @@ import BestSale from '../BestSale/BestSale'
 import Catagories from '../Catagories/Catagories'
 import ShopImage from '../Shop-Image/ShopImage'
 import ShopByGender from '../ShopByGender/ShopByGender'
+import Assurance from '../Assurance/Assurance'
 function HomePage() {
   const hotspots = [
     {
@@ -48,7 +48,7 @@ function HomePage() {
       <Lookbook hotspots={hotspots} />
       <ShopByGender/>
       <ShopImage/>
-      <Payments/>
+      <Assurance/>
     </div>
     </>
   )

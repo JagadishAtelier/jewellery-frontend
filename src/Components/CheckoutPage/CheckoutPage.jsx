@@ -135,7 +135,7 @@ useAbandonedCartTracker(cartItems, user);
                           }))
                         }
                       />
-                      <div>Billing Address same as shipping address</div>
+                      <p>Billing Address same as shipping address</p>
                     </div>
                   </div>
                   <div className="address-actions">

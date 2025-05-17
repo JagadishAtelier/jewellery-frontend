@@ -15,7 +15,7 @@ function ShopByGender() {
         {images.map((items, index) => (
           <div key={index} className="shop-by-gender-item">
             <img src={items.image} alt={items.text} />
-            <p>{items.text}</p>
+            <h5 style={{marginTop:"20px"}}>{items.text}</h5>
           </div>
         ))}
       </div>

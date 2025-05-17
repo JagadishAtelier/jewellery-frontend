@@ -201,12 +201,15 @@
 
   .size-options {
     flex-direction: row;
-    gap: 25px;
-    width: 47%;
+    gap: 35px;
+    width: 100%;
   }
 
   .size-guide-table th,
   .size-guide-table td {
     padding: 6px;
+  }
+  .size-guide{
+    margin-left: 50px;
   }
 }
