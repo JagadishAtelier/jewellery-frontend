@@ -121,6 +121,7 @@ export const categories = [
       },
     ],
   },
+  
   {
     columnClass: "box-w-medium",
     items: [

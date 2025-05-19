@@ -3,13 +3,13 @@ import './CheckoutPage.css';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import PaymentRoute from "../PaymentRoute/PaymentRoute";
-import { postUserDetails } from "../../api/productApi";
 import { useAbandonedCartTracker } from "../../hooks/useAbandonedCartTracker";
-
+import { requestOtp, verifyOtp, postUserDetails } from '../../api/productApi';
 function CheckoutPage() {
   const [showAddModal, setShowAddModal] = useState(false);
   const { state: product } = useLocation();
-
+  const [phone, setPhone] = useState('');
+  const [otp, setOtp] = useState('');
   // ✅ Format product into cartItems format
   const cartItems = product
     ? [{ _id: product._id, quantity: 1 }]  // Single item cart
@@ -102,6 +102,41 @@ useAbandonedCartTracker(cartItems, user);
     }
   };
 
+  
+  const handleContinue = async () => {
+    if (phone.length === 10) {
+      try {
+        const res = await requestOtp(phone);
+        setSessionId(res.data.sessionId);  // Store session ID
+        setStep(2);
+      } catch (error) {
+        console.error('Failed to send OTP', error);
+        alert('Failed to send OTP. Try again.');
+      }
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (otp.length === 4 && sessionId) {
+      try {
+        const res = await verifyOtp({ sessionId, otp, phone });
+        const token = res.data.token;
+        localStorage.setItem('token', token);
+  
+        if (res.data.user && res.data.user.name) {
+          localStorage.setItem('user', JSON.stringify(res.data.user));
+          setIsLoginOpen(false);
+        } else {
+          setStep(3);
+        }
+      } catch (error) {
+        console.error('OTP verification failed', error);
+        alert('Invalid OTP. Please try again.');
+      }
+    }
+  };
+  
+
   return (
     <>
       <Navbar />
@@ -166,31 +201,63 @@ useAbandonedCartTracker(cartItems, user);
 
           {showAddModal && (
             <div className="modal-overlay">
+              <div className="modal-all-content">
+                                
+              <h2>Add Shipping Address</h2>
               <div className="shipping-modal">
-                <h2>Add Shipping Address</h2>
+                <div className="input-name-email-phone">
+                  <div className="content-and-input">
+                    <label>Name*</label>
+                    <div>
+                      <input type="text" required placeholder="Enter your full name" value={newAddressData.name} onChange={(e) => setNewAddressData({ ...newAddressData, name: e.target.value })} />
+                    </div>
+                  </div>
 
-                <label>Pincode*</label>
-                <div className="input-group">
-                  <span className="flag">🇮🇳 IN</span>
-                  <input type="text" placeholder="Enter Pincode" value={newAddressData.pincode} onChange={(e) => setNewAddressData({ ...newAddressData, pincode: e.target.value })} />
+
+                  <div className="phone-number-input">
+                    <label>Phone Number*</label>
+                    <div className="input-group">
+                      <input type="text" required placeholder="00000-00000" value={newAddressData.phone} onChange={(e) => setNewAddressData({ ...newAddressData, phone: e.target.value })} />
+                      <button onClick={handleContinue}>Verify</button>
+                  </div>
                 </div>
 
-                <label>Name*</label>
-                <input type="text" placeholder="Enter your full name" value={newAddressData.name} onChange={(e) => setNewAddressData({ ...newAddressData, name: e.target.value })} />
 
-                <label>Phone Number*</label>
-                <div className="input-group">
-                  <span className="flag">🇮🇳 +91</span>
-                  <input type="text" placeholder="00000-00000" value={newAddressData.phone} onChange={(e) => setNewAddressData({ ...newAddressData, phone: e.target.value })} />
+                <div className="verify-number-input">
+                  <label>Verification code</label>
+                  <div className="input-group">
+                    <input type="text" required placeholder="Enter otp" />
+                    <button onClick={handleVerifyOtp}>Check</button>
+                  </div>
                 </div>
+              </div>
 
-                <label>Address*</label>
-                <input type="text" placeholder="Enter your address" value={newAddressData.address} onChange={(e) => setNewAddressData({ ...newAddressData, address: e.target.value })} />
 
-                <label>Email</label>
-                <input type="email" placeholder="Enter your email" value={newAddressData.email} onChange={(e) => setNewAddressData({ ...newAddressData, email: e.target.value })} />
+              <div className="input-pincode-address">
+                <div className="content-and-input">
+                  
+                  <label>Email</label>
+                  <div>
+                    <input type="email" required placeholder="Enter your email" value={newAddressData.email} onChange={(e) => setNewAddressData({ ...newAddressData, email: e.target.value })} />
+                  </div>
+                </div>
+                  <div className="content-and-input">
+                  <label>Pincode*</label>
+                  <div className="input-group">
+                    <input type="text" required placeholder="Enter Pincode" value={newAddressData.pincode} onChange={(e) => setNewAddressData({ ...newAddressData, pincode: e.target.value })} />
+                  </div>
+                  </div>
 
-                <div className="checkbox-group">
+                <div className="content-and-input">
+                  <label >Address*</label>
+                  <div>
+                    <input type="text" required placeholder="Enter your address" value={newAddressData.address} onChange={(e) => setNewAddressData({ ...newAddressData, address: e.target.value })} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="checkbox-group">
                   <input type="checkbox" id="default" checked={newAddressData.billingSame} onChange={(e) => setNewAddressData({ ...newAddressData, billingSame: e.target.checked })} />
                   <label htmlFor="default">Make this my default address</label>
                 </div>
@@ -201,7 +268,8 @@ useAbandonedCartTracker(cartItems, user);
                     Save Address
                   </button>
                 </div>
-              </div>
+                </div>
+                </div>
             </div>
           )}
         </div>
