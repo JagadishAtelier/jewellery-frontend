@@ -1,12 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Catagories.css";
-import { categories } from '../../assets/Catagories-collection';
-
+import { getCategories } from '../../api/categoriesAPI';
 const ShopByCategory = () => {
   const navigate = useNavigate();
   const ref = useRef([]);
-
+  const [categories,setCategories] = useState([])
   const scrollLeft = () => {
     document.getElementById("shopByCategorySlider").scrollBy({ left: -900, behavior: "smooth" });
   };
@@ -53,6 +52,20 @@ const ShopByCategory = () => {
     return () => clearInterval(autoScroll); // cleanup
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await getCategories();
+        setCategories(res.data);
+        console.log(res.data);
+      } catch (err) {
+        console.error("Failed to fetch products", err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="mt-5 categoryheading">
@@ -71,9 +84,9 @@ const ShopByCategory = () => {
               {col.items.map((item, idx) => (
                 <div
                   key={idx}
-                  onClick={() => navigate(`/category/${item.label}`)}
+                  onClick={() => navigate(`/products/${item._id}`)}
                   className={`category-card ${item.bg} ${item.heightClass}`}
-                  style={{ backgroundImage: `url(${item.image})`, cursor: 'pointer' }}
+                  style={{ backgroundImage: `url(${item.imageUrl})`, cursor: 'pointer' }}
                 >
                   <div className="category-name">{item.label}</div>
                 </div>

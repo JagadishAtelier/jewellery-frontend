@@ -48,6 +48,15 @@
   border: 1px solid rgb(234, 233, 233);
   transition: transform 0.3s ease-in-out; /* Added animation */
 }
+.view-all-btn{
+  background-color: #8b3a3a;
+  padding: 15px 20px;
+  margin: 30px;
+  color: white;
+  border-radius: 20px;
+  border: 1px solid rgb(234, 233, 233);
+  transition: transform 0.3s ease-in-out;
+}
 
 .filter-btn:hover {
   transform: scale(1.05); /* Hover animation */
@@ -339,3 +348,15 @@
   }
 }
 
+.not-found-wrapper {
+  text-align: center;
+  padding: 60px 20px;
+  color: #555;
+}
+
+.not-found-img {
+  max-width: 500px;
+  margin-left: 32%;
+  width: 100%;
+  margin-bottom: 20px;
+}

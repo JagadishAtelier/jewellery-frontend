@@ -17,6 +17,7 @@ import LoginPopup from './Components/LoginPopup/LoginPopup';
 import { ModalProvider } from './Components/ModalContext/ModalContext';
 import PaymentSuccess from './Components/PaymentSuccess/PaymentSuccess';
 import Footer from './Components/Footer/Footer';
+import AllProductPage from './Components/AllProductPage/AllProductPage';
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -47,7 +48,8 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage/>}/>
         <Route path="/product/:id" element={<ProductPageHome/>} />
-        <Route path="/category/:categoryName" element={<JewelleryType/>} />
+        <Route path='/products' element={<AllProductPage/>}/>
+        <Route path="/products/:id" element={<JewelleryType/>} />
         <Route path="/likes" element={<LikesPage/>} />
         <Route path="/cart" element={<CartPage/>} />
         <Route path="/checkout" element={<CheckoutPage/>} />
