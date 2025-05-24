@@ -22,7 +22,8 @@
 .navbar-logo-desktop{
   cursor: pointer;
 }
-.navbar-logo-desktop p{
+.navbar-logo-desktop a{
+  text-decoration: none;
   margin-left: 21px;
   margin-top: -10px;
   letter-spacing: 4.8px;

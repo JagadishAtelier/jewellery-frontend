@@ -3,6 +3,8 @@ import { getProducts } from '../../api/productApi';
 import { useLikedItems } from '../LikedItemsContext/LikedItemsContext';
 import Navbar from '../Navbar/Navbar';
 import SortFilterButtons from '../SortFilterButtons/SortFilterButtons';
+import { useNavigate } from "react-router-dom";
+import './AllProductPage.css'
 const pinkDivText = [
     { text: 'Because She deserves the best!' },
     { text: "A Mother's Day treat!" },
@@ -19,24 +21,29 @@ const pinkDivText = [
     { text: '22 KT' },
   ];
 function AllProductPage() {
+    const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [activeFilter, setActiveFilter] = useState(null);
     const { likedItems, toggleLike } = useLikedItems();
+    const  [loading, SetLoading] = useState(false);
     const [showSortModal, setShowSortModal] = useState(false);
     const [showFilterModal, setShowFilterModal] = useState(false);
     const[allProductList,setAllProductList] = useState([])
     useEffect(()=>{
       const getAllData = async() =>{
+        SetLoading(true)
         try {
           const res = await getProducts();
           setAllProductList(res.data);
           console.log(res.data);
         } catch (err) {
           console.error('Failed to fetch products', err);
+        }finally{
+           SetLoading(false)
         }
       }
       getAllData()
-    },[])
+    },[SetLoading])
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) =>
@@ -45,6 +52,16 @@ function AllProductPage() {
       }, 3000);
       return () => clearInterval(interval);
     }, []);
+
+if (loading) return (
+        <div className="d-flex justify-content-center align-items-center py-3">
+      <div className="spinner-border text-warning" role="status" style={{ width: "1.5rem", height: "1.5rem" }}>
+        <span className="visually-hidden">Loading...</span>
+      </div>
+      <span className="ms-2 small text-muted">Fetching Category Data...</span>
+    </div>
+    );
+
   return (
     <div className='jewellery-type-container'>
       <Navbar />
@@ -58,21 +75,24 @@ function AllProductPage() {
               <div
                 className='jewel-card'
                 key={index}
-                onClick={() =>
-                  navigate(`/product/${data._id}`, { state: data })
+                 onClick={() =>
+                  navigate(`/product/${data?._id}`, { state: data })
                 }
               >
                 <div className='image-container'>
                   <img src={data.images[0]} alt={data.name} />
                   <i
-                    className={`bi bi-heart${isLiked ? '-fill' : ''} heart-icon`}
+                    className={`bi bi-heart-fill`}
+                    style={{color:isLiked ? 'red' : 'white'}}
                     onClick={() => toggleLike(data)}
                   ></i>
                 </div>
                 <div className='jewel-card-details'>
                   <h2 className='price-btn'>₹ {data.price}</h2>
-                  <h4>{data.name}</h4>
+                 
+                  <h4 className='product-card-name'>{data.name}</h4>
                   <p className='description'>{data.shortdiscription}</p>
+                 
                 </div>
               </div>
             );

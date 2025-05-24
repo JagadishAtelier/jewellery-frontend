@@ -34,7 +34,7 @@ function Navbar() {
       {/* Mobile Navbar */}
       <div className="navbar-mobile">
         <div className="navbar-logo-mobile">
-          <p className="logo-text-mobile">Jewellery</p>
+          <a href='/' className="logo-text-mobile">Jewellery</a>
         </div>
         <button className="hamburger-menu" onClick={toggleMobileMenu}>
           <i className="bi bi-list fs-3"></i>
@@ -64,7 +64,7 @@ function Navbar() {
       {/* Desktop Navbar */}
       <div className="navbar-desktop">
         <div className="navbar-logo-desktop">
-          <p>Jewellery</p>
+          <a href='/' className="logo-text-mobile">Jewellery</a>
         </div>
 
         <Divisions />
