@@ -78,9 +78,9 @@ function Footer() {
       <div className="text-muted small mb-1 mb-md-0">
         {!loading ? (
           <>
-            24k - Gram:<span className="text-primary"> ₹{rates[0]?.ratePerGram || '-'} </span>Poun:<span className="text-primary"> ₹{rates[2]?.ratePerPoun || '-'} </span> &nbsp;|&nbsp;
+            18k - Gram:<span className="text-primary"> ₹{rates[0]?.ratePerGram || '-'} </span>Poun:<span className="text-primary"> ₹{rates[2]?.ratePerPoun || '-'} </span> &nbsp;|&nbsp;
             22k - Gram:<span className="text-primary"> ₹{rates[1]?.ratePerGram || '-'} </span>Poun:<span className="text-primary"> ₹{rates[2]?.ratePerPoun || '-'} </span> &nbsp;|&nbsp;
-            18k- Gram:<span className="text-primary"> ₹{rates[2]?.ratePerGram || '-'} </span>Poun:<span className="text-primary"> ₹{rates[2]?.ratePerPoun || '-'} </span>
+            24k- Gram:<span className="text-primary"> ₹{rates[2]?.ratePerGram || '-'} </span>Poun:<span className="text-primary"> ₹{rates[2]?.ratePerPoun || '-'} </span>
           </>
         ) : (
           <span>Loading gold rates...</span>
