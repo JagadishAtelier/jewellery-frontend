@@ -44,9 +44,8 @@ function Navbar() {
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/shop">Shop</a>
-          <a href="/contact">Contact</a>
+          <a href="/about-us">About</a>
+          <a href="/find-us">Find us</a>
           {user ? (
             <>
               <div className="profile-name"> {user.name}</div>
@@ -70,12 +69,6 @@ function Navbar() {
         <Divisions />
 
         <div className="navbar-right-icons d-flex align-items-baseline !mportant">
-          <div className="search-icon-wrapper">
-            <i className="bi bi-search fs-4" onClick={toggleSearchInput} style={{ cursor: 'pointer' }}></i>
-            {isSearchVisible && (
-              <input type="text" className="search-input" placeholder="Search..." autoFocus />
-            )}
-          </div>
 
           <a href="/likes"><i className="bi bi-heart fs-4 ms-3"></i></a>
           <a href="/cart"><i className="bi bi-bag fs-4 ms-3"></i></a>

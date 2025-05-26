@@ -1,0 +1,195 @@
+.about-page-text{
+    margin-top: 4%;
+    position: relative;
+    height: 500px;
+}
+.about-page-container{
+    background: linear-gradient(to bottom right, #fff0f4, #fdfcfc);
+}
+.about-page-text h1{
+    width: 800px;
+    position: absolute;
+    top: 20%;
+    line-height: inherit;
+    letter-spacing: 1px;
+    left: 10%;
+    font-size: xxx-large;
+    color: black !important;
+    
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    background: linear-gradient(to bottom right, #fff0f4, #fdfcfc);
+  }
+  
+  .about-card {
+    width: 500px;
+    height: 300px;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  
+  .about-card h2 {
+    font-size: 6rem;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .about-card span {
+    font-size: 1.5rem;
+  }
+  
+  .card-left {
+    background-color: #d04a5b;
+    transform: scale(0.9) rotateZ(-10deg) translateY(60px)
+  }
+  .card-center {
+    background-color: #f8b8c1;
+    color: #590a1e;
+    transform: rotate(0deg);
+  }
+  
+  .card-right {
+    background-color: #d04a5b;
+    transform: scale(0.9) rotateZ(10deg) translateY(60px)
+  }
+  .about-personality-conatiner{
+    margin-top: 5%;
+  }
+  .personality-heading{
+    text-align: center;
+    font-size: xx-large;
+  }
+  .about-personality-images-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+  }
+  .heading-and-para{
+    text-align: center;
+    margin-top: 10%;
+    width: 300px;
+  }
+  .about-personality-images-container img{
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+  }
+  .about-brand{
+    text-align: center;
+    font-size: xx-large;
+  }
+  @media (max-width: 1024px) {
+    .about-page-text h1 {
+      width: 90%;
+      font-size: 2.5rem;
+      left: 5%;
+    }
+  
+    .about-card {
+      width: 400px;
+      height: 280px;
+    }
+  
+    .about-card h2 {
+      font-size: 4rem;
+      margin-bottom: 30px;
+    }
+  
+    .about-card span {
+      font-size: 1.2rem;
+    }
+  
+    .about-personality-images-container img {
+      width: 240px;
+      height: 340px;
+    }
+  
+    .heading-and-para {
+      width: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-page-text {
+      height: auto;
+      margin-top: 8%;
+      padding-bottom: 2rem;
+    }
+  
+    .about-page-text h1 {
+      width: 90%;
+      font-size: 2rem;
+      top: 10%;
+      left: 5%;
+    }
+  
+    .card-container {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .about-card {
+      width: 90%;
+      height: auto;
+      padding: 2rem 1rem;
+      transform: none !important;
+    }
+  
+    .about-card h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+  
+    .about-card span {
+      font-size: 1rem;
+    }
+  
+    .about-personality-images-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .about-personality-images-container img {
+      width: 220px;
+      height: 320px;
+    }
+  
+    .heading-and-para {
+      width: 90%;
+      margin-top: 5%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-page-text h1 {
+      font-size: 1.5rem;
+      top: 8%;
+    }
+    .about-brand{
+        margin-top: 50%;
+    }
+    .about-card h2 {
+      font-size: 2.5rem;
+    }
+  
+    .about-personality-images-container img {
+      width: 100%;
+      height: 400px;
+    }
+  }
+  

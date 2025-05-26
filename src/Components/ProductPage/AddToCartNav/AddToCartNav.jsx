@@ -38,9 +38,11 @@ function AddToCartNav() {
   return (
     <div className="add-to-cart-container">
       <div className="product-details">
-        <img src={product?.images[1]} alt={product?.name} />
-        <h1>{product?.price.toLocaleString('en-IN')}</h1>
-        <p>{product?.name}</p>
+        <h4>₹ {product?.price.toLocaleString('en-IN')}</h4>
+        <div className='vertical-line'></div>
+        <p>Weight : {product?.weight}</p>
+        <p>karat : {product?.karat}</p>
+        <div className='vertical-line'></div>
       </div>
 
       <button onClick={handleAddToCart}>Add to Cart</button>

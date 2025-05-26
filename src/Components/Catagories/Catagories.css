@@ -59,7 +59,6 @@
   position: relative;
   text-decoration: none;
   color: white;
-  flex: 1;
   min-height: 150px;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
 }

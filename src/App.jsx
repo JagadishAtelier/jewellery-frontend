@@ -18,7 +18,9 @@ import { ModalProvider } from './Components/ModalContext/ModalContext';
 import PaymentSuccess from './Components/PaymentSuccess/PaymentSuccess';
 import Footer from './Components/Footer/Footer';
 import AllProductPage from './Components/AllProductPage/AllProductPage';
-
+import BestSellersPage from './Components/BestSellersPage/BestSellersPage';
+import AboutPage from './Components/AboutPage/AboutPage';
+import LocationMap from './Components/LocationMap/LocationMap'
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
 
@@ -55,6 +57,9 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage/>} />
         <Route path="/payment-page" element={<PaymentPage/>} />
         <Route path="/payment-success" element={<PaymentSuccess/>} />
+        <Route path="/best-sellers" element={<BestSellersPage/>} />
+        <Route path="/about-us" element={<AboutPage/>} />
+        <Route path="/find-us" element={<LocationMap/>} />
         </Routes>
         
       </Router>

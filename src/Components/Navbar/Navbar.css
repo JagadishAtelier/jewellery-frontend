@@ -207,14 +207,6 @@
 .profile-dropdown:hover .profile-menu {
   display: block;
 }
-.search-input {
-  padding: 8px;
-  margin-left: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 200px;
-  transition: width 0.3s ease;
-}
 .profile-dropdown .profile-menu {
   position: absolute;
   top: 100%;
