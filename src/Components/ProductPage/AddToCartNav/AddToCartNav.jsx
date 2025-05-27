@@ -39,6 +39,7 @@ function AddToCartNav() {
     <div className="add-to-cart-container">
       <div className="product-details">
         <h4>₹ {product?.price.toLocaleString('en-IN')}</h4>
+        <p>{product?.name}</p>
         <div className='vertical-line'></div>
         <p>Weight : {product?.weight}</p>
         <p>karat : {product?.karat}</p>

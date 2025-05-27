@@ -5,6 +5,7 @@
     height: auto;
     padding: 20px 60px 50px 100px;
     justify-content:space-between;
+    margin-top: 5%;
     position: relative; /* Required for pseudo-element positioning */
 }
 .top-curve{

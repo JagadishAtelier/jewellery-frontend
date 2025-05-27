@@ -1,7 +1,9 @@
 import React from 'react'
 import './ShopImage.css'
 import ShopImg from '../../assets/ShopImage.avif'
+import { useNavigate } from 'react-router-dom'
 function ShopImage() {
+  const navigate = useNavigate()
   return (
     <>
         <div className="mt-5 categoryheading">
@@ -14,7 +16,7 @@ function ShopImage() {
         <p>Locate your nearest</p>
         <h1>Offline Store</h1>
         <p>For an exquisite jewellery experience</p>
-        <button>find store</button>
+        <button onClick={()=>navigate('/find-us')}>find store</button>
       </div>
     </div>
     </>

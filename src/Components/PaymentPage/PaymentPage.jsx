@@ -84,9 +84,12 @@ function PaymentPage() {
     
     <div className="payment-route-container">
       <div className="product-details">
-        <img src={product?.images[1]} alt={product?.name} />
-        <h1>{product?.price.toLocaleString('en-IN')}</h1>
+        <h4>{product?.price.toLocaleString('en-IN')}</h4>
         <p>{product?.name}</p>
+        <div className='vertical-line'></div>
+        <p>Weight : {product?.weight}</p>
+        <p>karat : {product?.karat}</p>
+        <div className='vertical-line'></div>
       </div>
 
       {/* You can now access the product details here */}
