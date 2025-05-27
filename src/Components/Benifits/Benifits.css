@@ -60,7 +60,6 @@
   cursor: pointer;
 }
 
-/* Responsive Design */
 @media (max-width: 780px) {
   .Benifits {
     gap: 20px;

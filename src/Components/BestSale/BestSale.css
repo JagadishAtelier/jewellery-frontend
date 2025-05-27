@@ -1,4 +1,3 @@
-/* === Base Layout === */
 .best-sale-container {
   position: relative;
   display: flex;
@@ -33,7 +32,6 @@
   color: white !important;
 }
 
-/* === Entrance Animation === */
 .from-bottom {
   animation: slideFromBottom 0.8s ease forwards;
 }
@@ -64,14 +62,12 @@
   }
 }
 
-/* === Headline === */
 .best-sale-text {
   text-align: center;
   margin-bottom: 3%;
   color: rgb(138, 63, 36);
 }
 
-/* === Product Image Styling === */
 .best-sale-image {
   height: 400px;
   width: 300px;
@@ -80,14 +76,12 @@
   transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 
-/* === Image Wrapper === */
 .best-sale-img-div {
   border-radius: 12px;
   will-change: transform;
   transition: transform 0.9s ease;
 }
 
-/* === Indexed Transform Styles === */
 .index-0, .index-1, .index-2, .index-3, .index-4 {
   transform: scale(1);
   z-index: 1;
@@ -101,7 +95,6 @@
 .index-3 { transform: scale(0.9) rotateZ(3deg) translateY(20px); }
 .index-4 { transform: scale(0.9) rotateZ(4deg) translateY(40px); }
 
-/* === Slider Buttons === */
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -147,7 +140,6 @@
   }
 }
 
-/* === Image Container Slide Animation === */
 .best-sale-images {
   display: flex;
   justify-content: center;
@@ -175,7 +167,6 @@
   }
 }
 
-/* === Mobile Responsiveness === */
 @media (max-width: 768px) {
   .best-sale-images {
     display: block;

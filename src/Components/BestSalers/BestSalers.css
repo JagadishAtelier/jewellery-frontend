@@ -38,15 +38,15 @@
     border-radius: 5px;
     margin-bottom: 10px;
     justify-content: center;
-    align-items: center; /* center image vertically */
-    aspect-ratio: 1 / 1; /* force square shape */
-    overflow: hidden; /* hide overflow if image is larger */
+    align-items: center; 
+    aspect-ratio: 1 / 1; 
+    overflow: hidden; 
   }
   
   .card img {
     width: 100%;
     height: 100%;
-    border-radius: 0; /* match the square container exactly */
+    border-radius: 0; 
   }
   
   .producttest{

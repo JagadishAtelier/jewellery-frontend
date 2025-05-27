@@ -56,8 +56,8 @@ function Footer() {
   return (
    <>
     <div className='footer'>
-    <img src={footerImage1} className='top-curve'/>
-    <img src={footerImage2} className='bottom-curve'/>
+    {/* <img src={footerImage1} className='top-curve'/>
+    <img src={footerImage2} className='bottom-curve'/> */}
       <div className='footer-jewellery-content'>
         <h3>Usefull Links</h3>
         {collectionSub.map((sub)=>(

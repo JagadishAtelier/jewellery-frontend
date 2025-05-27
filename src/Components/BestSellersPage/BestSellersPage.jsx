@@ -1,11 +1,12 @@
-import './BestSellersPage.css'
+import './BestSellersPage.css';
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import SortFilterButtons from '../SortFilterButtons/SortFilterButtons';
 import { useLikedItems } from '../LikedItemsContext/LikedItemsContext';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getProducts } from "../../api/productApi";
+import { getProducts } from '../../api/productApi';
 import notFoundImage from '../../assets/Not-found.png';
+
 const pinkDivText = [
   { text: 'Because She deserves the best!' },
   { text: "A Mother's Day treat!" },
@@ -13,45 +14,89 @@ const pinkDivText = [
 ];
 
 const filterButtonList = [
-  { text: '< 10K' },
-  { text: 'Rings' },
-  { text: 'Earrings' },
-  { text: '< 25K' },
-  { text: 'Pendant' },
-  { text: 'Diamond' },
-  { text: '22 KT' },
+  'Below 10K',
+  'Below 25K',
+  'Rings',
+  'Earrings',
+  'Pendant',
+  'Diamond',
+  '22 KT',
 ];
+
+const sortButtonList = [
+  'Price: Low to High',
+  'Price: High to Low',
+  'Name: A to Z',
+  'Name: Z to A',
+];
+
 function BestSellersPage() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [activeFilter, setActiveFilter] = useState(null);
-    const { likedItems, toggleLike } = useLikedItems();
-    const [showSortModal, setShowSortModal] = useState(false);
-    const [showFilterModal, setShowFilterModal] = useState(false);
-    const [products, setProducts] = useState([]);
-    const { id } = useParams();
-    const navigate = useNavigate();
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex === pinkDivText.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 3000);
-      return () => clearInterval(interval);
-    }, []);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const res = await getProducts();
-          setProducts(res.data);
-          console.log(res.data);
-        } catch (err) {
-          console.error('Failed to fetch products', err);
-        }
-      };
-  
-      fetchData();
-    }, [id]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [products, setProducts] = useState([]);
+  const [sortOption, setSortOption] = useState(null);
+  const [filterOption, setFilterOption] = useState(null);
+  const [showSortModal, setShowSortModal] = useState(false);
+  const [showFilterModal, setShowFilterModal] = useState(false);
+
+  const { likedItems, toggleLike } = useLikedItems();
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === pinkDivText.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await getProducts();
+        setProducts(res.data);
+      } catch (err) {
+        console.error('Failed to fetch products', err);
+      }
+    };
+    fetchData();
+  }, [id]);
+
+  const getFilteredSortedProducts = () => {
+    let result = [...products];
+
+    // Filter
+    if (filterOption === 'Below 10K') {
+      result = result.filter((item) => item.price < 10000);
+    } else if (filterOption === 'Below 25K') {
+      result = result.filter((item) => item.price < 25000);
+    } else if (['Rings', 'Earrings', 'Pendant'].includes(filterOption)) {
+      result = result.filter((item) => item.category === filterOption);
+    } else if (filterOption === 'Diamond') {
+      result = result.filter((item) =>
+        item.material?.toLowerCase().includes('diamond')
+      );
+    } else if (filterOption === '22 KT') {
+      result = result.filter((item) =>
+        item.material?.toLowerCase().includes('22 kt')
+      );
+    }
+
+    // Sort
+    if (sortOption === 'Price: Low to High') {
+      result.sort((a, b) => a.price - b.price);
+    } else if (sortOption === 'Price: High to Low') {
+      result.sort((a, b) => b.price - a.price);
+    } else if (sortOption === 'Name: A to Z') {
+      result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortOption === 'Name: Z to A') {
+      result.sort((a, b) => b.name.localeCompare(a.name));
+    }
+
+    return result;
+  };
+
   return (
     <div className='jewellery-type-container'>
       <Navbar />
@@ -59,17 +104,16 @@ function BestSellersPage() {
         <h5 className='animated-text'>{pinkDivText[currentIndex].text}</h5>
       </div>
 
-      {/* Not Found fallback or product grid */}
-      {products.length === 0 ? (
-        <div className="not-found-wrapper">
-          <img src={notFoundImage} alt="Not Found" className="not-found-img" />
+      {getFilteredSortedProducts().length === 0 ? (
+        <div className='not-found-wrapper'>
+          <img src={notFoundImage} alt='Not Found' className='not-found-img' />
           <h2>No jewellery items found for this category</h2>
           <p>Please check another category or explore all items.</p>
         </div>
       ) : (
         <div className='jewel-grid'>
-          {products.map((data, index) => {
-            const isLiked = likedItems.some((item) => item.text === data.text);
+          {getFilteredSortedProducts().map((data, index) => {
+            const isLiked = likedItems.some((item) => item._id === data._id);
             return (
               <div
                 className='jewel-card'
@@ -82,7 +126,10 @@ function BestSellersPage() {
                   <img src={data.images[0]} alt={data.name} />
                   <i
                     className={`bi bi-heart${isLiked ? '-fill' : ''} heart-icon`}
-                    onClick={() => toggleLike(data)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleLike(data);
+                    }}
                   ></i>
                 </div>
                 <div className='jewel-card-details'>
@@ -95,9 +142,13 @@ function BestSellersPage() {
           })}
         </div>
       )}
-      <div style={{textAlign:"center"}}>
-        <button className='view-all-btn' onClick={()=>navigate('/products')}>View All Products</button>
+
+      <div style={{ textAlign: 'center' }}>
+        <button className='view-all-btn' onClick={() => navigate('/products')}>
+          View All Products
+        </button>
       </div>
+
       <SortFilterButtons
         onSortChange={(sortOption) => {
           if (sortOption === 'open') setShowSortModal(true);
@@ -107,31 +158,32 @@ function BestSellersPage() {
         }}
       />
 
+      {/* Sort Modal */}
       {showSortModal && (
         <div className='modal-overlay'>
           <div className='modal-content'>
-            <h3>Sort & Filter Options</h3>
+            <h3>Sort Options</h3>
             <div className='modal-btns'>
-              {filterButtonList.map((filter, index) => (
+              {sortButtonList.map((sort, index) => (
                 <button
                   key={index}
                   className='modal-filter-btn'
                   onClick={() => {
-                    setActiveFilter(filter.text);
+                    setSortOption(sort);
                     setShowSortModal(false);
                   }}
                 >
-                  {filter.text}
+                  {sort}
                 </button>
               ))}
               <button
                 className='modal-filter-btn reset-btn'
                 onClick={() => {
-                  setActiveFilter(null);
+                  setSortOption(null);
                   setShowSortModal(false);
                 }}
               >
-                Reset
+                Reset Sort
               </button>
               <button
                 className='modal-close-btn'
@@ -144,6 +196,7 @@ function BestSellersPage() {
         </div>
       )}
 
+      {/* Filter Modal */}
       {showFilterModal && (
         <div className='modal-overlay'>
           <div className='modal-content'>
@@ -154,21 +207,21 @@ function BestSellersPage() {
                   key={index}
                   className='modal-filter-btn'
                   onClick={() => {
-                    setActiveFilter(filter.text);
+                    setFilterOption(filter);
                     setShowFilterModal(false);
                   }}
                 >
-                  {filter.text}
+                  {filter}
                 </button>
               ))}
               <button
                 className='modal-filter-btn reset-btn'
                 onClick={() => {
-                  setActiveFilter(null);
+                  setFilterOption(null);
                   setShowFilterModal(false);
                 }}
               >
-                Reset
+                Reset Filter
               </button>
               <button
                 className='modal-close-btn'
@@ -181,7 +234,7 @@ function BestSellersPage() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default BestSellersPage
+export default BestSellersPage;

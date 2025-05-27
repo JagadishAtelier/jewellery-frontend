@@ -4,13 +4,13 @@
   padding: 5px 20px;
   text-align: center;
   color: white;
-  animation: slideIn 1s ease-in-out; /* Added animation */
+  animation: slideIn 1s ease-in-out;
 }
 
 .animated-text {
   font-size: 1.8rem;
   font-weight: 600;
-  animation: fadeInOut 4s ease-in-out infinite, bounce 2s ease infinite; /* Added bounce animation */
+  animation: fadeInOut 4s ease-in-out infinite, bounce 2s ease infinite; 
   letter-spacing: 0.8px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   margin: 0;
@@ -46,7 +46,7 @@
   margin: 30px;
   border-radius: 20px;
   border: 1px solid rgb(234, 233, 233);
-  transition: transform 0.3s ease-in-out; /* Added animation */
+  transition: transform 0.3s ease-in-out;
 }
 .view-all-btn{
   background-color: #8b3a3a;
@@ -68,7 +68,7 @@
 
 .jewellery-type-container {
   background-color: rgb(245, 243, 243);
-  animation: fadeIn 1.5s ease-out; /* Added fade-in animation */
+  animation: fadeIn 1.5s ease-out;
 }
 
 @keyframes fadeIn {
@@ -76,13 +76,12 @@
   100% { opacity: 1; }
 }
 
-/* Grid layout */
 .jewel-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 50px;
-  animation: fadeIn 2s ease-out; /* Added fade-in animation */
+  animation: fadeIn 2s ease-out; 
 }
 
 .jewel-card {
@@ -92,11 +91,11 @@
   text-align: start;
   padding-bottom: 20px;
   cursor: pointer;
-  transition: transform 0.2s ease; /* Added animation */
+  transition: transform 0.2s ease;
 }
 
 .jewel-card:hover {
-  transform: translateY(-5px); /* Hover animation */
+  transform: translateY(-5px);
 }
 
 .jewel-card img {

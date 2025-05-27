@@ -306,7 +306,6 @@ useAbandonedCartTracker(cartItems, user);
               <div className="item-right">
                 <div className="item-header">
                   <h2>₹ {product.price.toLocaleString('en-IN')}</h2>
-                  <i className="bi bi-trash3"></i>
                 </div>
                 <p className="item-name">{product.name}</p>
                 <div className="item-details">

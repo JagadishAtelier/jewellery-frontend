@@ -41,12 +41,10 @@
     padding: 5%;
     border-radius: 10px;
 }
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     .Assurance-data-div {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
         justify-items: center;
     }
@@ -83,7 +81,7 @@
         margin-left: 13px;
     }
 }
-/* Animation Keyframes */
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -95,8 +93,7 @@
     }
 }
 
-/* Apply Animation to Images */
 .Assurance-data-div img {
     animation: fadeInUp 0.8s ease forwards;
-    opacity: 0; /* Ensures animation starts from 0 opacity */
+    opacity: 0;
 }

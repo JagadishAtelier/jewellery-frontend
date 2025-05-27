@@ -22,7 +22,7 @@
     bottom: -2px;
     width: 0%;
     height: 2px;
-    background: linear-gradient(to right, #8b3a3a, #8b3a3a); /* gold tones */
+    background: linear-gradient(to right, #8b3a3a, #8b3a3a); 
     transition: width 0.4s ease-in-out;
     border-radius: 2px;
   }
@@ -46,11 +46,11 @@
   }
   
   .jewellery-dropdown {
-    position: fixed; /* Changed from absolute to fixed */
-    top: 70px; /* adjust based on navbar height */
+    position: fixed; 
+    top: 70px; 
     left: 0;
     width: 100vw;
-    height: 500px; /* full screen height */
+    height: 500px; 
     background: #fff;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -155,9 +155,9 @@
   }
   .animated-placeholder {
     position: absolute;
-    left: 120px; /* same horizontal position */
+    left: 120px; 
     top: 29%;
-    transform: translateY(50%); /* start slightly below */
+    transform: translateY(50%); 
     color: #8b3a3a;
     font-weight: 600;
     font-size: 14px;
