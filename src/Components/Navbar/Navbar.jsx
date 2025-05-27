@@ -44,6 +44,7 @@ function Navbar() {
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <a href="/">Home</a>
+          <a href='/best-sellers'>Best Sellers</a>
           <a href="/about-us">About</a>
           <a href="/find-us">Find us</a>
           {user ? (

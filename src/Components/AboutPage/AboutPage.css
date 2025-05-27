@@ -1,3 +1,12 @@
+@keyframes simpleFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .about-page-text{
     margin-top: 4%;
     position: relative;
@@ -15,7 +24,7 @@
     left: 10%;
     font-size: xxx-large;
     color: black !important;
-    
+    animation: simpleFade 1s ease-in-out both;
 }
 .card-container {
     display: flex;
@@ -27,6 +36,7 @@
   }
   
   .about-card {
+    animation: simpleFade 1.2s ease-in-out both;
     width: 500px;
     height: 300px;
     padding: 2rem 1.5rem;
@@ -87,6 +97,7 @@
     width: 300px;
     height: 400px;
     object-fit: cover;
+    animation: simpleFade 1.5s ease-in-out both;
   }
   .about-brand{
     text-align: center;
