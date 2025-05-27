@@ -1,43 +1,64 @@
 .footer{
     display: flex;
-    background-color:rgb(71, 57, 71);
-    margin-top: 5%;
+    background: #300708 0% 0% no-repeat padding-box;
     color: white;
     height: auto;
-    padding: 40px 80px;
+    padding: 20px 0px 50px 100px;
     justify-content:space-between;
+    position: relative; /* Required for pseudo-element positioning */
 }
-.footer h1{
-    margin-bottom: 15px;
+.top-curve{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    height: 40px;
+    right: 45%;
 }
-.catalog-item{
+.bottom-curve{
+    position: absolute;
+    bottom: -0.1px;
+    width: fill-available;
+    height: 40px;
+    left: 40%;
+    right: 45%;
+    -webkit-transform: scale(-1, -1);
+    transform: scale(-1, -1);
+}
+.social{
+    margin: 0 !important;
+}
+.social-icon{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row;
+    margin-top: 30px;
 }
-.contact-item{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    text-decoration-line: none;
-}
-.logo-footer{
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.policy p{
-    font-size: x-small;
-    color: #b790b7;
-    opacity: 0.8;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 10px;
-}
-.policy p:hover{
-    color: #e9dce9;
+.social-icon i{
+    font-size: 22px;
 }
 
+.download-content{
+    width: 400px;
+}
+.footer-jewellery-content h3{
+    color: white !important;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.footer-jewellery-content a{
+    color: white;
+    text-decoration: none;
+    margin-top: 10%;
+    font-size: 18px;
+}
+.footer-sub-heading{
+    margin-top: 15px;
+}
+.QR-image{
+    height: 150px;
+    width: 150px;
+}
 @media (max-width: 480px) {
     .footer{
         flex-direction: column;

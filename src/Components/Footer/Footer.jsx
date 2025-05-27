@@ -1,19 +1,37 @@
 import React from 'react'
 import './Footer.css'
 import Atelierlogo from '../../assets/Atelier-logo-nav.png'
+import QrImage from '../../assets/QR.webp'
 import { useEffect, useState } from 'react';
+import footerImage1 from '../../assets/footerImage1.png'
+import footerImage2 from '../../assets/footerImage2.webp'
 import axios from 'axios';
-const items = [
-    {name : "Collections",href : "/Collections"},
-    {name : "Rings",href : "/Rings"},
-    {name : "Earings",href : "/Earings"},
-    {name : "Necklace",href : "/Necklace"},
-    {name : "Bracelets",href : "/Bracelets"},
-    {name : "Broochers",href : "/Broochers"},
-
+const informationSub = [
+    {name : "Home",href : "/"},
+    {name : "Best Sellers",href : "/best-sellers"},
+    {name : "About-Us",href : "/about-us"},
+    {name : "Find-Us",href : "/find-us"},
+]
+const jewellerySub = [
+  {name : "Rings",href : "#"},
+  {name : "Necklace",href : "#"},
+  {name : "Earrings",href : "#"},
+  {name : "Chains",href : "#"},
+  {name : "Silver",href : "#"},
+]
+const collectionSub = [
+  {name : "Likes",href : "/likes"},
+  {name : "Cart",href : "/cart"},
 ]
 
 
+const contactUs = [
+  {name : "1111-222-3333",href : "#"},
+  {name : "Write to Us",href : "#"},
+  {name : "Chat with us",href : "#"},
+  {name : "Whatsapp Chat with us",href : "#"},
+  {name : "+91 12345 67890",href : "#"},
+]
 function Footer() {
   const [rates, setRates] = useState({});
   const [loading, setLoading] = useState(true);
@@ -35,36 +53,61 @@ function Footer() {
   return (
    <>
     <div className='footer'>
+    <img src={footerImage1} className='top-curve'/>
+    <img src={footerImage2} className='bottom-curve'/>
       <div className='logo-footer'>
        {/* <img src={Atelierlogo} alt="Atelier" height={"70px"} style={{marginTop:"10px"}}/> */}
-       <div>
-       <h1>Atelier</h1>
-       <p>Jewellery</p>
-       </div>
-       <div className="policy">
-        <p>Privacy Policy</p>
-        <p>Return Policy</p>
-        <p>Refund Policy</p>
+       <div className='footer-jewellery-content'>
+          <h3>Jewellery</h3>
+          {jewellerySub.map((sub)=>(
+        <div className='footer-sub-heading'>
+          <a href={sub.href}>{sub.name}</a>
+        </div>
+       ))}
        </div>
       </div>
+      <div className='footer-jewellery-content'>
+        <h3>Usefull Links</h3>
+        {collectionSub.map((sub)=>(
+          <div className='footer-sub-heading'>
+            <a href={sub.href}>{sub.name}</a>
+          </div>
+        ))}
+      </div>
 
-      <div className='Catalog-footer'>
-        <h1>Catalogs</h1>
-        <div className='catalog-item' >
-      {items.map((data,index)=>(
-            <a href={data.href} key={index} style={{color:"white",textDecorationLine:"none",fontSize:"15px",marginTop:"10px"}}>{data.name}</a>
-      ))}
+      <div className='footer-jewellery-content'>
+        <h3>Information</h3>
+        {informationSub.map((sub)=>(
+          <div className='footer-sub-heading'>
+            <a href={sub.href}>{sub.name}</a>
+          </div>
+        ))}
+      </div>
+      
+      <div className='footer-jewellery-content'>
+    <div className='footer-jewellery-content'>
+        <h3>Contacts</h3> 
+       {contactUs.map((sub)=>(
+        <div className='footer-sub-heading'>
+          <a href={sub.href}>{sub.name}</a>
         </div>
+       ))}
     </div>
+      </div>
 
-    <div className='Contact-footer'>
-        <h1>Contacts</h1> 
-       <div className="contact-item">
-       <a style={{marginBottom:"15px"}}><i className="bi bi-telephone me-3"></i>+91 98765 65432</a>
-        <a style={{marginBottom:"15px",display:'flex'}}><i className="bi bi-geo-alt me-3"></i><span style={{display:"block"}}>28, 1&2, 771, Dr Rajendra Prasad Rd,<br />Gandhipuram, Tamil Nadu <br />641012</span></a>
-        <a style={{marginBottom:"15px"}}><i className="bi bi-envelope me-3"></i>contactus@example.com</a>
-       </div>
-    </div>
+      <div className='footer-jewellery-content'>
+        <h3 className='download-content'>Download the Mia app for exclusive offers!</h3>
+        <img src={QrImage} className='QR-image'/>
+        <div className='social-icon'>
+          <h3 className='social'>Social</h3>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-twitter-x"></i>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-linkedin"></i>
+        </div>
+
+      </div>
+
     </div>
     {/* <footer className="bg-white border-top text-center py-2">
         <small className="text-muted">
