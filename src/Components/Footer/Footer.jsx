@@ -10,7 +10,7 @@ const informationSub = [
     {name : "Home",href : "/"},
     {name : "Best Sellers",href : "/best-sellers"},
     {name : "About-Us",href : "/about-us"},
-    {name : "Find-Us",href : "/find-us"},
+    {name : "Find a Store",href : "/find-us"},
 ]
 const jewellerySub = [
   {name : "Rings",href : "#"},
@@ -20,8 +20,11 @@ const jewellerySub = [
   {name : "Silver",href : "#"},
 ]
 const collectionSub = [
-  {name : "Likes",href : "/likes"},
-  {name : "Cart",href : "/cart"},
+  {name : "Delivery Information",href : "#"},
+  {name : "International Shipping",href : "#"},
+  {name : "Payment Options",href : "#"},
+  {name : "Track your Order",href : "#"},
+  {name : "Returns",href : "#"},
 ]
 
 
@@ -55,17 +58,6 @@ function Footer() {
     <div className='footer'>
     <img src={footerImage1} className='top-curve'/>
     <img src={footerImage2} className='bottom-curve'/>
-      <div className='logo-footer'>
-       {/* <img src={Atelierlogo} alt="Atelier" height={"70px"} style={{marginTop:"10px"}}/> */}
-       <div className='footer-jewellery-content'>
-          <h3>Jewellery</h3>
-          {jewellerySub.map((sub)=>(
-        <div className='footer-sub-heading'>
-          <a href={sub.href}>{sub.name}</a>
-        </div>
-       ))}
-       </div>
-      </div>
       <div className='footer-jewellery-content'>
         <h3>Usefull Links</h3>
         {collectionSub.map((sub)=>(
@@ -96,7 +88,7 @@ function Footer() {
       </div>
 
       <div className='footer-jewellery-content'>
-        <h3 className='download-content'>Download the Mia app for exclusive offers!</h3>
+        <h3 className='download-content'>Download the app for exclusive offers!</h3>
         <img src={QrImage} className='QR-image'/>
         <div className='social-icon'>
           <h3 className='social'>Social</h3>

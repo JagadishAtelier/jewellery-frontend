@@ -3,7 +3,7 @@
     background: #300708 0% 0% no-repeat padding-box;
     color: white;
     height: auto;
-    padding: 20px 0px 50px 100px;
+    padding: 20px 60px 50px 100px;
     justify-content:space-between;
     position: relative; /* Required for pseudo-element positioning */
 }
@@ -39,7 +39,7 @@
 }
 
 .download-content{
-    width: 400px;
+    width: 300px;
 }
 .footer-jewellery-content h3{
     color: white !important;
